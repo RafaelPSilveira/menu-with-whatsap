@@ -414,9 +414,236 @@
         </div>
     </section>
     <section class="reservations" id="reservations">
-
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card-secondary">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="col-12 text-center">
+                                    <span class="hint-title"><b>Reservas</b></span>
+                                    <h1 class="title"><b>Quer reservar um horário?</b></h1>
+                                    <p class="pr-5">
+                                        Mande uma mensagem clicando no botão abaixo <br> Reserve sua data e horário de forma simples e rápida.
+                                    </p>
+                                    <a href="" class="btn btn-yellow mt-4">Fazer Reserva</a>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="card-reservation"></div>
+                                <div class="d-flex img-banner">
+                                    <img src="./img/icone-reserva.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <footer></footer>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 container-logo-footer">
+                    <img class="logo-footer" src="./img/logo.png" alt="">
+                </div>
+                <div class="col-6 container-text-footer">
+                    <p class="mb-0">
+                        <b>Menu Online</b> &copy; Todos os direitos reservados
+                    </p>
+                </div>
+                <div class="col-3 container-socia-midias-footer">
+                    <a href="#" class="btn btn-sm btn-white btn-social mr-3">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-white btn-social mr-3">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-white btn-social">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-full" id="modalCart">
+        <div class="modal-header">
+            <div class="container">
+                <a href="" class="btn btn-white btn-sm float-right">Fechar</a>
+                <div class="phases">
+                    <div class="phase phase-1 active">1</div>
+                    <div class="phase phase-2">2</div>
+                    <div class="phase phase-3">3</div>
+                </div>
+                <p class="title-cart mt-4">
+                    <b id="lblTitlePhase">Meu carrinho</b>
+                </p>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div id="itemsCart" class="row mr-0 ml-0  hidden">
+                    <div class="col-12 items-cart">
+                        <div class="img-product">
+                            <img src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="">
+                        </div>
+                        <div class="data-product">
+                            <p class="title-product"><b>Nome do Produto</b></p>
+                            <p class="price-product"><b>134,99</b></p>
+                        </div>
+                        <div class="add-cart">
+                            <span class="btn-decrement"><i class="fas fa-minus"></i></span>
+                            <span class="add-number-items">0</span>
+                            <span class="btn-increment"><i class="fas fa-plus"></i></span>
+                            <span class="btn btn-remove"><i class="fa fa-times"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="deliveryAddress" class="row mr-0 ml-0 hidden">
+                    <div class="col-4">
+                        <div class="form-group container-zipcode">
+                            <label for="zipcode">CEP</label>
+                            <input type="text" class="form-control" id="zipcode" placeholder="00000-000">
+                            <a href="" class="btn btn-yellow btn-sm"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-8"></div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="address">Endereço:</label>
+                            <input type="text" class="form-control" id="address" placeholder="Digite seu endereço">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="neighborhood">Bairro:</label>
+                            <input type="text" class="form-control" id="neighborhood" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label for="number">Número:</label>
+                            <input type="text" class="form-control" id="number" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="city">Cidade:</label>
+                            <input type="text" class="form-control" id="city" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="complement">Complemento:</label>
+                            <input type="text" class="form-control" id="complement" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label for="uf">UF:</label>
+                            <select name="uf" id="UF" class="form-control">
+                                <option value="">Selecione</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MT">MT</option>
+                                <option value="MS">MS</option>
+                                <option value="MG">MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SP">SP</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="summaryCart" class="row mr-0 ml-0 ">
+                    <div class="col-12">
+                        <p class="title-cart">
+                            <b>Itens do Pedido</b>
+                        </p>
+                    </div>
+                    <div class="col-12">
+                        <div class="row" id="listItemsSummary">
+                            <div class="col-12 items-cart summary">
+                                <div class="img-product-summary">
+                                    <img src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="">
+                                </div>
+                                <div class="data-product">
+                                    <p class="title-product-summary">
+                                        <b>Nome do Produto</b>
+                                    </p>
+                                    <p class="price-product-summary">
+                                        <b>R$ 100,00</b>
+                                    </p>
+                                </div>
+                                <p class="qtd-product-summary">
+                                    x <b>3</b>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-5">
+                        <p class="title-cart">
+                            <b>Local da entrega</b>
+                        </p>
+                    </div>
+                    <div class="col-12 items-cart summary">
+                        <div class="img-map">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="data-product">
+                            <p class="text-address">
+                                <b id="summaryAddress">Rua Teste, 200, bairro Teste</b>
+                            </p>
+                            <p class="city-address" id="cityAddress">
+                                Ji-Parana / 00000-000
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="container">
+                <div class="container-total text-right mb-4">
+                    <p class="mb-0">
+                        <span>Subtotal:</span>
+                        <span id="lblSubTotal">R$ 95,00</span>
+                    </p>
+                    <p class="mb-0 text-delivery">
+                        <span><i class="fas fa-motorcycle"></i> Entrega</span>
+                        <span id="lblValueDelivery"> + R$ 5,00</span>
+                    </p>
+                    <p class="mb-0 text-total">
+                        <span><b>Total:</b></span>
+                        <span class="value-total" id="lblTotal"><b>R$ 100,00</b></span>
+                    </p>
+                </div>
+                <a href="" class="btn btn-yellow float-right" id="phaseOrder">Continuar</a>
+                <a href="" class="btn btn-yellow float-right hidden" id="phaseAddress">Revisar Pedido</a>
+                <a href="" class="btn btn-yellow float-right hidden" id="phaseSummary">Enviar Pedido</a>
+                <a href="" class="btn btn-white float-right mr-3 hidden" id="btnBack">Voltar</a>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="./js/modernizr-3.5.0.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
