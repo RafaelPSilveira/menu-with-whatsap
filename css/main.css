@@ -19,6 +19,7 @@
     --color-red: #e74c3c;
     --color-green: #2ecc71;
     --color-separete: #cccccc;
+    --color-warning: #f5d883;
 }
 
 html, body {
@@ -742,4 +743,64 @@ select.form-control {
 
 .city-address {
     margin-bottom: 0;
+}
+
+.badge-total-cart {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-color: var(--color-secondary);
+    border-radius: 50px;
+    right: -5px;
+    top: -5px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-cart {
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    height: 50px;
+    width: 50px;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    color: var(--color-black-heavy) !important;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.container-msg {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 9999;
+}
+
+.toast {
+    color: var(--color-white);
+    padding: 10px 25px;
+    font-size: 1.125rem;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.toast.success {
+    background-color: var(--color-green);
+}
+
+.toast.danger {
+    background-color: var(--color-red);
+}
+
+.toast.warning {
+    background-color: var(--color-warning);
 }

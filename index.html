@@ -6,9 +6,18 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/fontawesome.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/animate.css">
     <title>Cardapio Online | oRafaDev</title>
 </head>
 <body>
+
+    <div class="container-msg" id="container-msg"></div>
+
+    <a class="btn-cart hidden" onclick="cardapio.methods.openCart(true)">
+        <div class="badge-total-cart">8</div>
+        <i class="fa fa-shopping-cart"></i>
+    </a>
+
     <section class="header">
         <div class="container">
             <div class="navbar navbar-expand-lg pl-0 pr-0">
@@ -35,8 +44,12 @@
                             <a href="testimony" class="nav-link"><b>Depoimentos</b></a>
                         </li>
                     </ul>
-                    <a href="#" class="btn btn-white btn-icon">
-                        Meu carrinho <span class="icon"><i class="fa fa-shopping-bag"></i></span>
+                    <a class="btn btn-white btn-icon"onclick="cardapio.methods.openCart(true)">
+                        Meu carrinho 
+                        <span class="icon">
+                            <div class="container-total-cart badge-total-cart hidden"></div>
+                            <i class="fa fa fa-shopping-cart"></i>
+                        </span>
                     </a>
                 </div>
             </div>
@@ -319,7 +332,7 @@
     <div class="modal-full hidden" id="modalCart">
         <div class="modal-header">
             <div class="container">
-                <a href="" class="btn btn-white btn-sm float-right">Fechar</a>
+                <a href="" class="btn btn-white btn-sm float-right" onclick="cardapio.methods.openCart(true)">Fechar</a>
                 <div class="phases">
                     <div class="phase phase-1 active">1</div>
                     <div class="phase phase-2">2</div>
