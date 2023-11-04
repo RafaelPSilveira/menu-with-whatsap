@@ -332,42 +332,30 @@
     <div class="modal-full hidden" id="modalCart">
         <div class="modal-header">
             <div class="container">
-                <a href="" class="btn btn-white btn-sm float-right" onclick="cardapio.methods.openCart(true)">Fechar</a>
+                <a class="btn btn-white btn-sm float-right" onclick="cardapio.methods.openCart(false)">Fechar</a>
                 <div class="phases">
-                    <div class="phase phase-1 active">1</div>
+                    <div class="phase phase-1">1</div>
                     <div class="phase phase-2">2</div>
                     <div class="phase phase-3">3</div>
                 </div>
                 <p class="title-cart mt-4">
-                    <b id="lblTitlePhase">Meu carrinho</b>
+                    <b id="lblTitlePhase"></b>
                 </p>
             </div>
         </div>
         <div class="modal-body">
             <div class="container">
-                <div id="itemsCart" class="row mr-0 ml-0  hidden">
-                    <div class="col-12 items-cart">
-                        <div class="img-product">
-                            <img src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="">
-                        </div>
-                        <div class="data-product">
-                            <p class="title-product"><b>Nome do Produto</b></p>
-                            <p class="price-product"><b>134,99</b></p>
-                        </div>
-                        <div class="add-cart">
-                            <span class="btn-decrement"><i class="fas fa-minus"></i></span>
-                            <span class="add-number-items">0</span>
-                            <span class="btn-increment"><i class="fas fa-plus"></i></span>
-                            <span class="btn btn-remove"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
-                </div>
+
+                <div id="itemsCart" class="row mr-0 ml-0  hidden"></div>
+                
                 <div id="deliveryAddress" class="row mr-0 ml-0 hidden">
                     <div class="col-4">
                         <div class="form-group container-zipcode">
-                            <label for="zipcode">CEP</label>
-                            <input type="text" class="form-control" id="zipcode" placeholder="00000-000">
-                            <a href="" class="btn btn-yellow btn-sm"><i class="fa fa-search"></i></a>
+                            <label for="zipCode">CEP</label>
+                            <input type="text" class="form-control" id="zipCode" placeholder="00000-000">
+                            <a class="btn btn-yellow btn-sm" onclick="cardapio.methods.searchZipCode()">
+                                <i class="fa fa-search"></i>
+                            </a>
                         </div>
                     </div>
                     <div class="col-8"></div>
@@ -379,8 +367,8 @@
                     </div>
                     <div class="col-4">
                         <div class="form-group">
-                            <label for="neighborhood">Bairro:</label>
-                            <input type="text" class="form-control" id="neighborhood" placeholder="">
+                            <label for="district">Bairro:</label>
+                            <input type="text" class="form-control" id="district" placeholder="">
                         </div>
                     </div>
                     <div class="col-2">
@@ -404,8 +392,8 @@
                     <div class="col-2">
                         <div class="form-group">
                             <label for="uf">UF:</label>
-                            <select name="uf" id="UF" class="form-control">
-                                <option value="">Selecione</option>
+                            <select name="uf" id="uf" class="form-control">
+                                <option value="-1">Selecione</option>
                                 <option value="AL">AL</option>
                                 <option value="AP">AP</option>
                                 <option value="AM">AM</option>
@@ -436,7 +424,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="summaryCart" class="row mr-0 ml-0 ">
+                <div id="summaryCart" class="row mr-0 ml-0 hidden">
                     <div class="col-12">
                         <p class="title-cart">
                             <b>Itens do Pedido</b>
@@ -444,22 +432,7 @@
                     </div>
                     <div class="col-12">
                         <div class="row" id="listItemsSummary">
-                            <div class="col-12 items-cart summary">
-                                <div class="img-product-summary">
-                                    <img src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="">
-                                </div>
-                                <div class="data-product">
-                                    <p class="title-product-summary">
-                                        <b>Nome do Produto</b>
-                                    </p>
-                                    <p class="price-product-summary">
-                                        <b>R$ 100,00</b>
-                                    </p>
-                                </div>
-                                <p class="qtd-product-summary">
-                                    x <b>3</b>
-                                </p>
-                            </div>
+
                         </div>
                     </div>
                     <div class="col-12 mt-5">
@@ -472,12 +445,8 @@
                             <i class="fas fa-map-marked-alt"></i>
                         </div>
                         <div class="data-product">
-                            <p class="text-address">
-                                <b id="summaryAddress">Rua Teste, 200, bairro Teste</b>
-                            </p>
-                            <p class="city-address" id="cityAddress">
-                                Ji-Parana / 00000-000
-                            </p>
+                            <p class="text-address"> <b id="summaryAddress"></b></p>
+                            <p class="city-address" id="cityAddress"></p>
                         </div>
                     </div>
                 </div>
@@ -488,21 +457,21 @@
                 <div class="container-total text-right mb-4">
                     <p class="mb-0">
                         <span>Subtotal:</span>
-                        <span id="lblSubTotal">R$ 95,00</span>
+                        <span id="lblSubTotal">R$ 0,00</span>
                     </p>
                     <p class="mb-0 text-delivery">
                         <span><i class="fas fa-motorcycle"></i> Entrega</span>
-                        <span id="lblValueDelivery"> + R$ 5,00</span>
+                        <span id="lblValueDelivery"> + R$ 0,00</span>
                     </p>
                     <p class="mb-0 text-total">
                         <span><b>Total:</b></span>
-                        <span class="value-total" id="lblTotal"><b>R$ 100,00</b></span>
+                        <span class="value-total"><b id="lblTotal">R$ 0,00</b></span>
                     </p>
                 </div>
-                <a href="" class="btn btn-yellow float-right" id="phaseOrder">Continuar</a>
-                <a href="" class="btn btn-yellow float-right hidden" id="phaseAddress">Revisar Pedido</a>
-                <a href="" class="btn btn-yellow float-right hidden" id="phaseSummary">Enviar Pedido</a>
-                <a href="" class="btn btn-white float-right mr-3 hidden" id="btnBack">Voltar</a>
+                <a  class="btn btn-yellow float-right hidden" id="phaseOrder" onclick="cardapio.methods.loadPhaseAddress()">Continuar</a>
+                <a  class="btn btn-yellow float-right hidden" id="phaseAddress" onclick="cardapio.methods.orderSummary()">Revisar Pedido</a>
+                <a  class="btn btn-yellow float-right hidden" id="sendRequest" target="_blank">Enviar Pedido</a>
+                <a  class="btn btn-white float-right mr-3 hidden" id="btnBack" onclick="cardapio.methods.backStage()">Voltar</a>
             </div>
         </div>
     </div>
