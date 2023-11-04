@@ -69,7 +69,7 @@
                             <a href="" class="btn btn-yellow mt-4 mr-3">
                                 Ver cardápio
                             </a>
-                            <a href="" class="btn btn-white btn-icon-left mt-4">
+                            <a href="#" class="btn btn-white btn-icon-left mt-4" id="phoneCall">
                                 <span class="icon-left">
                                     <i class="fa fa-phone"></i>
                                 </span>
@@ -77,13 +77,13 @@
                             </a>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-sm btn-white btn-social mt-4 mr-3">
+                    <a href="#" class="btn btn-sm btn-white btn-social mt-4 mr-3 linkInstagram" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="btn btn-sm btn-white btn-social mt-4 mr-3">
+                    <a href="#" class="btn btn-sm btn-white btn-social mt-4 mr-3 facebook linkFacebook" target="_blank">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="btn btn-sm btn-white btn-social mt-4 mr-3">
+                    <a href="#" class="btn btn-sm btn-white btn-social mt-4 mr-3 whatsapp linkWhatsapp" target="_blank">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
@@ -268,9 +268,9 @@
                             </p>
                         </div>
                     </div>
-                    <a href="" class="btn btn-sm btn-white btn-social mr-3 active">1</a>
-                    <a href="" class="btn btn-sm btn-white btn-social mr-3">2</a>
-                    <a href="" class="btn btn-sm btn-white btn-social">3</a>
+                    <a class="btn btn-sm btn-white btn-social mr-3 active" id="btnTestimony-1" onclick="cardapio.methods.loadTestimony(1)">1</a>
+                    <a class="btn btn-sm btn-white btn-social mr-3" id="btnTestimony-2" onclick="cardapio.methods.loadTestimony(2)">2</a>
+                    <a class="btn btn-sm btn-white btn-social" id="btnTestimony-3" onclick="cardapio.methods.loadTestimony(3)">3</a>
                 </div>
             </div>
         </div>
@@ -288,7 +288,7 @@
                                     <p class="pr-5">
                                         Mande uma mensagem clicando no botão abaixo <br> Reserve sua data e horário de forma simples e rápida.
                                     </p>
-                                    <a href="" class="btn btn-yellow mt-4">Fazer Reserva</a>
+                                    <a href="#" class="btn btn-yellow mt-4" id="btnReservation" target="_blank">Fazer Reserva</a>
                                 </div>
                             </div>
                             <div class="col-5">
@@ -315,13 +315,13 @@
                     </p>
                 </div>
                 <div class="col-3 container-socia-midias-footer">
-                    <a href="#" class="btn btn-sm btn-white btn-social mr-3">
+                    <a href="#" class="btn btn-sm btn-white btn-social mr-3 linkInstagram" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="btn btn-sm btn-white btn-social mr-3">
+                    <a href="#" class="btn btn-sm btn-white btn-social mr-3 linkFacebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="btn btn-sm btn-white btn-social">
+                    <a href="#" class="btn btn-sm btn-white btn-social linkWhatsapp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>

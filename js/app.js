@@ -10,11 +10,16 @@ var value_cart = 0;
 var value_delivery = 5;
 var address = null;
 var number_phone = '5548988406937';
+let Instagram = "https://www.instagram.com/";
+let Facebook = "https://www.facebook.com/";
 
 
 cardapio.events = {
     init: () => {
         cardapio.methods.getItemsMenu();
+        cardapio.methods.makeReservation();
+        cardapio.methods.phoneNumber();
+        cardapio.methods.loadSocialMedias();
     }
 }
 
@@ -430,6 +435,49 @@ cardapio.methods = {
                 }
             });
         }
+    },
+
+    //* Button with link to request reservations
+    makeReservation: () => {
+        var textMsg = `Olá, gostaria de fazer uma *reserva*!`;
+        let encodedMsg = encodeURIComponent(textMsg);
+        let url = `https://wa.me/${number_phone}?text=${encodedMsg}`;
+
+        $('#btnReservation').attr('href', url);
+    },
+
+    phoneNumber: () => {
+        let url = `tel:${number_phone}`;
+        $('#phoneCall').attr('href', url);
+    },
+
+    //* Load testimony
+    loadTestimony: (testimony) => {
+        $('#testimony-1').addClass('hidden');
+        $('#testimony-2').addClass('hidden');
+        $('#testimony-3').addClass('hidden');
+
+        $('#btnTestimony-1').removeClass('active');
+        $('#btnTestimony-2').removeClass('active');
+        $('#btnTestimony-3').removeClass('active');
+
+        $('#testimony-' + testimony).removeClass('hidden');
+        $('#btnTestimony-' + testimony).addClass('active');
+    },
+
+    //* Load links social medias
+    loadSocialMedias: () => {
+        let urlInstagram = `https://www.instagram.com/`;
+        let urlFacebook = `https://www.facebook.com/`;
+
+        $('.linkInstagram').attr('href', urlInstagram);
+        $('.linkFacebook').attr('href', urlFacebook);
+
+        var textMsg = `Olá, vim do site e gostaria de fazer um pedido.`;
+        let encodedMsg = encodeURIComponent(textMsg);
+        let urlWhatsapp = `https://wa.me/${number_phone}?text=${encodedMsg}`;
+
+        $('.linkWhatsapp').attr('href', urlWhatsapp);
     },
     
     
