@@ -479,20 +479,6 @@ cardapio.methods = {
 
         $('.linkWhatsapp').attr('href', urlWhatsapp);
     },
-    
-    
-
-            
-
-
-
-
-
-
-
-
-
-
 
     message: (msg, color = 'danger', time = 3500) => {
 
@@ -517,7 +503,7 @@ cardapio.methods = {
 
 cardapio.templates = {
     item: `                        
-        <div class="col-3 mb-5">
+        <div class="col-12 col-lg-3 col-md-3 col-sm-6 mb-5 wow fadeInUp">
             <div class="card card-item" id="\${id}">
                 <div class="img-product">
                     <img src="\${img}" alt="">
@@ -550,7 +536,7 @@ cardapio.templates = {
                 <span class="btn-decrement" onclick="cardapio.methods.decrementItemCart('\${id}')"><i class="fas fa-minus"></i></span>
                 <span class="add-number-items" id="qtd-cart-\${id}">\${qtd}</span>
                 <span class="btn-increment" onclick="cardapio.methods.incrementItemCart('\${id}')"><i class="fas fa-plus"></i></span>
-                <span class="btn btn-remove" onclick="cardapio.methods.removeItemCart('\${id}')"><i class="fa fa-times"></i></span>
+                <span class="btn btn-remove no-mobile" onclick="cardapio.methods.removeItemCart('\${id}')"><i class="fa fa-times"></i></span>
             </div>
         </div>`,
         itemSummary:

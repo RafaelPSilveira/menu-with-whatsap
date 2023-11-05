@@ -472,6 +472,9 @@ a.navbar-brand {
     right: 0;
     top: -25px;
 }
+.text-reservation {
+    padding-right: 25px;
+}
 
 .reservations .img-banner img {
     width: 100%;
